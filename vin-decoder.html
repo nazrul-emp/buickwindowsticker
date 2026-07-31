@@ -1,0 +1,456 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Free Buick VIN Decoder - Decode Your Buick VIN | BuickWindowSticker.com</title>
+<meta name="description" content="Free Buick VIN decoder. Decode your 17-digit VIN to reveal model year, engine, transmission, trim, and factory specifications instantly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-icon">B</span>
+      BuickWindowSticker
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="mega-dropdown">
+        <a href="#">Services</a>
+        <div class="mega-menu">
+          <div class="mega-col">
+            <span class="mega-heading">Window Sticker Services</span>
+            <a href="product.html"><span class="mm-icon">WS</span> Buick Window Sticker<span class="mm-desc">Factory-accurate Monroney label</span></a>
+            <a href="vin-decoder.html"><span class="mm-icon">BS</span> Build Sheet<span class="mm-desc">Complete factory build record</span></a>
+            <a href="vin-decoder.html"><span class="mm-icon">VD</span> VIN Decoder<span class="mm-desc">Free 17-digit VIN decoding</span></a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-heading">Vehicle Information</span>
+            <a href="#"><span class="mm-icon">VL</span> VIN Lookup<span class="mm-desc">Search vehicle by VIN number</span></a>
+            <a href="#"><span class="mm-icon">FO</span> Factory Options<span class="mm-desc">Original equipment &amp; packages</span></a>
+            <a href="#"><span class="mm-icon">VS</span> Vehicle Specs<span class="mm-desc">Full technical specifications</span></a>
+          </div>
+          <div class="mega-col mega-feat">
+            <span class="mega-heading">Featured Service</span>
+            <div class="mega-feat-card">
+              <div class="mega-feat-badge">Popular</div>
+              <strong>Buick Window Sticker</strong>
+              <p>Get your official factory window sticker by VIN. Original MSRP, options, and packages instantly.</p>
+              <a href="product.html" class="btn btn-primary" style="padding:10px 20px;font-size:0.8125rem;width:100%">Get Yours Now</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Login</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu">
+  <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+  <a href="/">Home</a>
+  <a href="product.html">Buick Window Sticker</a>
+  <a href="vin-decoder.html">VIN Decoder</a>
+  <a href="/#pricing">Pricing</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/#contact">Contact</a>
+  <a href="product.html" class="btn btn-primary" style="margin-top:24px">Get Window Sticker</a>
+</div>
+
+<section class="page-hero">
+  <div class="hero-overlay"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="page-hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+      <div style="text-align:center">
+        <span class="hero-badge" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:8px 16px;font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;display:inline-block"><span style="color:#fff;font-weight:600">&#9733;</span> Free VIN Decoder</span>
+        <h1>Decode Your Buick<br>VIN Instantly</h1>
+        <p style="margin:0 auto">Enter your 17-character VIN to reveal your Buick's complete identity — model year, engine, transmission, trim level, and factory specifications at no cost.</p>
+        <div class="vin-input-group" style="margin:28px auto 0;max-width:520px">
+          <input type="text" placeholder="Enter VIN (e.g., 5GAEVBKWXSJ123456)" maxlength="17" aria-label="Vehicle Identification Number">
+          <button type="button" onclick="decodeVIN()" id="decodeBtn">Decode VIN</button>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center">
+          <span style="font-family:var(--number);font-size:0.625rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;padding:4px 10px;background:rgba(255,255,255,0.04);border-radius:4px">WMI: Country + Manufacturer</span>
+          <span style="font-family:var(--number);font-size:0.625rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;padding:4px 10px;background:rgba(255,255,255,0.04);border-radius:4px">VDS: Vehicle Attributes</span>
+          <span style="font-family:var(--number);font-size:0.625rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;padding:4px 10px;background:rgba(255,255,255,0.04);border-radius:4px">VIS: Year + Plant + S/N</span>
+        </div>
+        <div class="hero-trust" style="margin-top:20px;justify-content:center">
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Free service — no payment required
+          </div>
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Fast, accurate results
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <img src="https://images.unsplash.com/photo-1619767886558-efdc7b9af2c1?w=600&q=80" alt="Buick vehicle" style="width:100%;max-width:500px;border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);object-fit:cover;aspect-ratio:4/3">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="decode-results" style="display:none">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <span class="section-label">Results</span>
+      <h2>Your Buick VIN Decoded</h2>
+      <p>Below is the complete breakdown of your 17-character VIN. Each segment reveals specific information about your Buick.</p>
+    </div>
+    <div style="background:var(--card);border-radius:var(--radius-xl);border:1px solid var(--border);overflow:hidden;margin-bottom:40px" class="reveal visible">
+      <div style="display:grid;grid-template-columns:repeat(17,1fr);gap:2px;background:var(--border);padding:0">
+        <script>
+          for(let i=0;i<17;i++){
+            const chars = ['5','G','A','E','V','B','K','W','X','S','J','1','2','3','4','5','6'];
+            document.write('<div style="text-align:center;padding:16px 4px;background:var(--card)"><span style="font-family:\'Space Grotesk\',monospace;font-size:1.125rem;font-weight:700;color:var(--primary)">'+chars[i]+'</span><br><span style="font-size:0.5rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em">'+(i+1)+'</span></div>');
+          }
+        </script>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border)">
+        <div style="text-align:center;padding:12px;background:var(--card)"><span style="font-family:var(--number);font-size:0.75rem;font-weight:600;color:var(--primary)">WMI</span><br><span style="font-size:0.625rem;color:var(--text-secondary)">World Manufacturer ID</span></div>
+        <div style="text-align:center;padding:12px;background:var(--card)"><span style="font-family:var(--number);font-size:0.75rem;font-weight:600;color:var(--primary)">VDS</span><br><span style="font-size:0.625rem;color:var(--text-secondary)">Vehicle Descriptor</span></div>
+        <div style="text-align:center;padding:12px;background:var(--card)"><span style="font-family:var(--number);font-size:0.75rem;font-weight:600;color:var(--primary)">VIS</span><br><span style="font-size:0.625rem;color:var(--text-secondary)">Vehicle Identifier</span></div>
+      </div>
+    </div>
+    <div class="specs-grid" style="margin-bottom:40px">
+      <div class="spec-card reveal visible"><div class="spec-label">WMI</div><div class="spec-value">5GA</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">USA / Buick / MPV</div></div>
+      <div class="spec-card reveal visible reveal-delay-1"><div class="spec-label">Model Year</div><div class="spec-value">2025</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Character S = 2025</div></div>
+      <div class="spec-card reveal visible reveal-delay-2"><div class="spec-label">Plant</div><div class="spec-value">Lansing, MI</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Character J = Lansing Delta Twp</div></div>
+      <div class="spec-card reveal visible"><div class="spec-label">Make</div><div class="spec-value">Buick</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">General Motors</div></div>
+      <div class="spec-card reveal visible reveal-delay-1"><div class="spec-label">Model</div><div class="spec-value">Enclave</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Enclave Avenir</div></div>
+      <div class="spec-card reveal visible reveal-delay-2"><div class="spec-label">Restraint System</div><div class="spec-value">Advanced</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Front, side, curtain airbags</div></div>
+      <div class="spec-card reveal visible"><div class="spec-label">Engine</div><div class="spec-value">3.6L V6</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">LGX / 310 hp</div></div>
+      <div class="spec-card reveal visible reveal-delay-1"><div class="spec-label">Check Digit</div><div class="spec-value">Verified</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Character 9: Valid</div></div>
+      <div class="spec-card reveal visible reveal-delay-2"><div class="spec-label">Serial Number</div><div class="spec-value">123456</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Production sequence</div></div>
+    </div>
+    <div class="reveal visible" style="text-align:center">
+      <p style="font-size:0.9375rem;color:var(--text-secondary);margin-bottom:24px">Want the full factory window sticker with MSRP, options, and packages?</p>
+      <a href="product.html" class="btn btn-primary btn-lg">Get Complete Window Sticker</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">VIN Structure</span>
+      <h2>Understanding Your Buick's VIN</h2>
+      <p>Every character in your 17-digit VIN tells a story. Here's what each segment reveals about your Buick.</p>
+    </div>
+    <div class="timeline" style="max-width:600px;margin:0 auto">
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>Positions 1-3: World Manufacturer Identifier (WMI)</h5>
+          <p>Country of origin, manufacturer, and vehicle type. Buick vehicles in the US start with 1G, 2G, 3G, 4G, or 5GA.</p>
+        </div>
+      </div>
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>Positions 4-8: Vehicle Descriptor Section (VDS)</h5>
+          <p>Model line, body style, engine type, restraint system, and transmission. This defines the core vehicle attributes.</p>
+        </div>
+      </div>
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>Position 9: Check Digit</h5>
+          <p>A mathematically calculated value that verifies the VIN is valid and has not been tampered with or altered.</p>
+        </div>
+      </div>
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>Position 10: Model Year</h5>
+          <p>Identifies the vehicle's model year. Letters and numbers rotate on a 30-year cycle (e.g., S=2025, T=2026, V=2027).</p>
+        </div>
+      </div>
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>Position 11: Assembly Plant</h5>
+          <p>Identifies the specific GM assembly plant where your Buick was manufactured (e.g., J = Lansing Delta Township, MI).</p>
+        </div>
+      </div>
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>Positions 12-17: Vehicle Identifier Section (VIS)</h5>
+          <p>The unique serial number of your vehicle. This is your Buick's individual production sequence within the model year.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What You Can Decode</span>
+      <h2>Information Available from Your VIN</h2>
+      <p>Our VIN decoder extracts every detail that General Motors encodes in your vehicle's unique identifier.</p>
+    </div>
+    <div class="vin-info-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div class="vehicle-card reveal">
+        <div class="vehicle-icon">&#9733;</div>
+        <h5>Manufacturer</h5>
+        <p>Country of origin and brand</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-1">
+        <div class="vehicle-icon">&#9881;</div>
+        <h5>Engine</h5>
+        <p>Displacement, configuration, output</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-2">
+        <div class="vehicle-icon">&#9881;</div>
+        <h5>Transmission</h5>
+        <p>Type and gear count</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-3">
+        <div class="vehicle-icon">&#9632;</div>
+        <h5>Trim Level</h5>
+        <p>Base, Essence, Premium, Avenir</p>
+      </div>
+      <div class="vehicle-card reveal">
+        <div class="vehicle-icon">&#9670;</div>
+        <h5>Drive Type</h5>
+        <p>FWD or AWD configuration</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-1">
+        <div class="vehicle-icon">&#9632;</div>
+        <h5>Model Year</h5>
+        <p>Exact model year of manufacture</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-2">
+        <div class="vehicle-icon">&#9632;</div>
+        <h5>Production Plant</h5>
+        <p>Assembly facility location</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-3">
+        <div class="vehicle-icon">&#9881;</div>
+        <h5>Factory Specs</h5>
+        <p>GVWR, brake system, body class</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Vehicle History</span>
+      <h2>Why VIN Decoding Matters</h2>
+      <p>Understanding your VIN is the first step to knowing your vehicle's complete history and verifying its authenticity.</p>
+    </div>
+    <div class="vin-matters-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <div class="glass-card-spec reveal vin-matters-card" style="padding:40px 36px">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+          <div style="width:44px;height:44px;background:var(--primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">&#10003;</div>
+          <h4 style="font-size:1.125rem">Verify Authenticity</h4>
+        </div>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:20px">Confirm that your vehicle's VIN matches its documented specifications. Detect potential odometer rollback, title washing, or VIN cloning before making a purchase.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0;border-bottom:1px solid rgba(217,221,225,0.2)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Match VIN to vehicle trim level</li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0;border-bottom:1px solid rgba(217,221,225,0.2)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Verify engine and transmission match</li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Check for VIN tampering indicators</li>
+        </ul>
+      </div>
+      <div class="glass-card-spec reveal reveal-delay-1 vin-matters-card" style="padding:40px 36px">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+          <div style="width:44px;height:44px;background:var(--primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">&#9881;</div>
+          <h4 style="font-size:1.125rem">Parts &amp; Service Accuracy</h4>
+        </div>
+        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:20px">Get the right parts, service procedures, and specifications for your exact Buick configuration. Avoid costly mistakes from incorrect assumptions.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0;border-bottom:1px solid rgba(217,221,225,0.2)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Correct engine parts and fluids</li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0;border-bottom:1px solid rgba(217,221,225,0.2)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Transmission service specifications</li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Exact brake and suspension components</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Why Choose Us</span>
+      <h2>Why Buick Owners Trust Us</h2>
+      <p>We are the premier destination for Buick VIN decoding and window sticker services. Here's why thousands of owners choose us.</p>
+    </div>
+    <div class="vehicle-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="vehicle-card reveal">
+        <div class="vehicle-icon">&#9733;</div>
+        <h5>GM Factory Data</h5>
+        <p>Direct integration with General Motors' official build database for maximum accuracy.</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-1">
+        <div class="vehicle-icon">&#8615;</div>
+        <h5>Instant Results</h5>
+        <p>Free VIN decoding in seconds. No sign-up, no credit card required.</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-2">
+        <div class="vehicle-icon">&#128274;</div>
+        <h5>Secure &amp; Private</h5>
+        <p>Your VIN and personal data are encrypted and never shared with third parties.</p>
+      </div>
+      <div class="vehicle-card reveal">
+        <div class="vehicle-icon">&#9670;</div>
+        <h5>Buick Specialists</h5>
+        <p>Focused exclusively on Buick — no generic multi-brand databases.</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-1">
+        <div class="vehicle-icon">&#9632;</div>
+        <h5>Unmatched Detail</h5>
+        <p>More data points than any free decoder. Options, packages, and pricing included.</p>
+      </div>
+      <div class="vehicle-card reveal reveal-delay-2">
+        <div class="vehicle-icon">&#9881;</div>
+        <h5>Customer Support</h5>
+        <p>Dedicated US-based support team ready to help with any question.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">FAQ</span>
+      <h2>VIN Decoder FAQ</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item active">
+        <button class="faq-question">What is a VIN?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>A Vehicle Identification Number (VIN) is a unique 17-character code assigned to every motor vehicle. It serves as your vehicle's fingerprint, containing information about the manufacturer, model year, engine, and more.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is the VIN decoder really free?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes. Our basic VIN decoder is completely free with no hidden charges. You can decode your Buick's VIN and get comprehensive vehicle information without any payment. Upgrading to a full window sticker is optional.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What information can I get from a VIN?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>A VIN decode reveals the manufacturer, country of origin, model year, engine type, transmission, trim level, drive type, assembly plant, and the vehicle's unique serial number. For detailed pricing and options, you need a full window sticker.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is the difference between VIN decoding and a window sticker?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>VIN decoding reveals the vehicle's built-in identity codes. A window sticker (Monroney label) shows the original MSRP, every factory-installed option and package, EPA ratings, and the final retail price. The window sticker provides the complete financial picture.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I decode a non-Buick VIN here?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Our service is optimized specifically for Buick vehicles. While we may provide basic information for other GM brands, for the most accurate and complete results, we recommend Buick VINs only.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Ready for the Full Picture?</h2>
+      <p>Your free VIN decode is just the beginning. Get your complete factory window sticker with MSRP, options, and packages.</p>
+      <a href="product.html" class="btn btn-primary btn-lg" style="background:#fff;color:var(--primary)">Get Your Window Sticker</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="color:#fff">
+          <span class="nav-logo-icon" style="background:#fff;color:var(--primary)">B</span>
+          BuickWindowSticker
+        </a>
+        <p>The most trusted source for factory-accurate Buick window stickers and VIN decoding services.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul class="footer-links">
+          <li><a href="product.html">Window Sticker</a></li>
+          <li><a href="vin-decoder.html">VIN Decoder</a></li>
+          <li><a href="#">Build Sheet</a></li>
+          <li><a href="#">VIN Lookup</a></li>
+          <li><a href="#">Factory Options</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <ul class="footer-links">
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Sample Sticker</a></li>
+          <li><a href="#">Find Your VIN</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Order Status</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="current-year">2026</span> BuickWindowSticker.com. All rights reserved.</span>
+      <ul class="footer-bottom-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li style="display:flex;gap:8px;align-items:center">
+          <svg width="28" height="18" viewBox="0 0 28 18" fill="none"><rect width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/><text x="3" y="13" fill="rgba(255,255,255,0.4)" font-size="7" font-family="monospace">VISA</text></svg>
+          <svg width="28" height="18" viewBox="0 0 28 18" fill="none"><rect width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/><text x="2" y="13" fill="rgba(255,255,255,0.4)" font-size="6" font-family="monospace">MC</text></svg>
+          <svg width="28" height="18" viewBox="0 0 28 18" fill="none"><rect width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/><text x="2" y="13" fill="rgba(255,255,255,0.4)" font-size="5.5" font-family="monospace">AE</text></svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+function decodeVIN(){
+  const btn=document.getElementById('decodeBtn');
+  const results=document.getElementById('decode-results');
+  btn.textContent='Decoding...';
+  btn.disabled=true;
+  setTimeout(()=>{
+    results.style.display='block';
+    results.scrollIntoView({behavior:'smooth',block:'start'});
+    btn.textContent='Decoded';
+    btn.style.background='var(--success)';
+  },800);
+}
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
