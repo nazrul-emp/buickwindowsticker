@@ -13,26 +13,27 @@
 
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <span class="nav-logo-icon">B</span>
       BuickWindowSticker
     </a>
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li class="mega-dropdown">
-        <a href="#">Services</a>
+        <a href="#">Tools</a>
         <div class="mega-menu">
           <div class="mega-col">
-            <span class="mega-heading">Window Sticker Services</span>
-            <a href="product.html"><span class="mm-icon">WS</span> Buick Window Sticker<span class="mm-desc">Factory-accurate Monroney label</span></a>
-            <a href="vin-decoder.html"><span class="mm-icon">BS</span> Build Sheet<span class="mm-desc">Complete factory build record</span></a>
-            <a href="vin-decoder.html"><span class="mm-icon">VD</span> VIN Decoder<span class="mm-desc">Free 17-digit VIN decoding</span></a>
+            <span class="mega-heading">Lookup Tools</span>
+            <a href="#"><span class="mm-icon">OV</span> Options By VIN<span class="mm-desc">Original options & packages</span></a>
+            <a href="#"><span class="mm-icon">SV</span> Specs By VIN<span class="mm-desc">Full technical specifications</span></a>
+            <a href="#"><span class="mm-icon">PC</span> Paint Codes<span class="mm-desc">Factory paint & interior codes</span></a>
+            <a href="#"><span class="mm-icon">RC</span> Buick Recall Check<span class="mm-desc">Safety recall information</span></a>
           </div>
           <div class="mega-col">
             <span class="mega-heading">Vehicle Information</span>
-            <a href="#"><span class="mm-icon">VL</span> VIN Lookup<span class="mm-desc">Search vehicle by VIN number</span></a>
-            <a href="#"><span class="mm-icon">FO</span> Factory Options<span class="mm-desc">Original equipment &amp; packages</span></a>
-            <a href="#"><span class="mm-icon">VS</span> Vehicle Specs<span class="mm-desc">Full technical specifications</span></a>
+            <a href="vin-decoder.html"><span class="mm-icon">VD</span> VIN Decoder<span class="mm-desc">Free 17-digit VIN decoding</span></a>
+            <a href="product.html"><span class="mm-icon">WS</span> Window Sticker<span class="mm-desc">Factory-accurate Monroney label</span></a>
+            <a href="#"><span class="mm-icon">BS</span> Build Sheet<span class="mm-desc">Complete factory build record</span></a>
           </div>
           <div class="mega-col mega-feat">
             <span class="mega-heading">Featured Service</span>
@@ -45,9 +46,9 @@
           </div>
         </div>
       </li>
-      <li><a href="/#pricing">Pricing</a></li>
-      <li><a href="/#faq">FAQ</a></li>
-      <li><a href="/#contact">Contact</a></li>
+      <li><a href="#">MSRP Lookup</a></li>
+      <li><a href="#">Warranty</a></li>
+      <li><a href="#">Build Sheet</a></li>
     </ul>
     <a href="#" class="nav-cta">Login</a>
     <button class="nav-toggle" aria-label="Toggle menu">
@@ -58,328 +59,625 @@
 
 <div class="mobile-menu">
   <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
-  <a href="/">Home</a>
-  <span class="mobile-menu-label">Services</span>
-  <a href="product.html" class="mobile-menu-sub">Buick Window Sticker</a>
-  <a href="vin-decoder.html" class="mobile-menu-sub">Build Sheet</a>
-  <a href="vin-decoder.html" class="mobile-menu-sub">VIN Decoder</a>
-  <a href="product.html" class="mobile-menu-sub">VIN Lookup</a>
-  <a href="product.html" class="mobile-menu-sub">Factory Options</a>
-  <span class="mobile-menu-label">Company</span>
-  <a href="/#pricing">Pricing</a>
-  <a href="/#faq">FAQ</a>
-  <a href="/#contact">Contact</a>
+  <a href="index.html">Home</a>
+  <span class="mobile-menu-label">Tools</span>
+  <a href="#">Options By VIN</a>
+  <a href="#">Specs By VIN</a>
+  <a href="#">Paint Codes</a>
+  <a href="#">Recall Check</a>
+  <span class="mobile-menu-label">Vehicle Information</span>
+  <a href="vin-decoder.html">VIN Decoder</a>
+  <a href="product.html">Window Sticker</a>
+  <a href="#">Build Sheet</a>
+  <span class="mobile-menu-label">Account</span>
+  <a href="#">Login</a>
+  <a href="#">Sign Up</a>
   <div class="mobile-menu-actions">
     <a href="#" class="btn btn-primary" style="width:100%;justify-content:center">Login</a>
     <a href="product.html" class="btn btn-outline" style="width:100%;justify-content:center">Get Window Sticker</a>
   </div>
 </div>
 
+<!-- HERO -->
 <section class="page-hero">
   <div class="hero-overlay"></div>
-  <div class="container" style="position:relative;z-index:1">
-    <div class="page-hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-      <div style="text-align:center">
-        <span class="hero-badge" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:8px 16px;font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;display:inline-block"><span style="color:#fff;font-weight:600">&#9733;</span> Free VIN Decoder</span>
-        <h1>Decode Your Buick<br>VIN Instantly</h1>
-        <p style="margin:0 auto">Enter your 17-character VIN to reveal your Buick's complete identity — model year, engine, transmission, trim level, and factory specifications at no cost.</p>
-        <div class="vin-input-group" style="margin:28px auto 0;max-width:520px">
-          <input type="text" placeholder="Enter VIN (e.g., 5GAEVBKWXSJ123456)" maxlength="17" aria-label="Vehicle Identification Number">
-          <button type="button" onclick="decodeVIN()" id="decodeBtn">Decode VIN</button>
-        </div>
-        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center">
-          <span style="font-family:var(--number);font-size:0.625rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;padding:4px 10px;background:rgba(255,255,255,0.04);border-radius:4px">WMI: Country + Manufacturer</span>
-          <span style="font-family:var(--number);font-size:0.625rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;padding:4px 10px;background:rgba(255,255,255,0.04);border-radius:4px">VDS: Vehicle Attributes</span>
-          <span style="font-family:var(--number);font-size:0.625rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;padding:4px 10px;background:rgba(255,255,255,0.04);border-radius:4px">VIS: Year + Plant + S/N</span>
-        </div>
-        <div class="hero-trust" style="margin-top:20px;justify-content:center">
-          <div class="hero-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Free service — no payment required
-          </div>
-          <div class="hero-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Fast, accurate results
-          </div>
+  <div class="container" style="position:relative;z-index:1;text-align:center;max-width:760px">
+    <span class="hero-badge reveal visible" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:8px 16px;font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;display:inline-block"><span style="color:#fff;font-weight:600">&#9733;</span> Free VIN Decoder</span>
+    <h1 class="reveal visible">Decode Any Buick VIN for Free</h1>
+    <p class="reveal visible" style="margin:0 auto;max-width:620px">Decode your Buick VIN in seconds with our free Buick VIN Decoder. Enter your VIN to access factory vehicle specifications, including the model, trim, engine, transmission, drivetrain, model year, body style, and other important details. It's a fast and reliable way to verify your Buick's original specifications.</p>
+
+    <div class="hero-tabs reveal visible" style="margin:32px auto 20px">
+      <button class="hero-tab active" data-tab="vin">By VIN</button>
+      <button class="hero-tab" data-tab="plate">By U.S License Plate</button>
+    </div>
+
+    <div class="hero-lookup reveal visible">
+      <div class="hero-lookup-panel active" id="tab-vin">
+        <div class="hero-search" style="margin:0 auto 28px">
+          <input type="text" placeholder="Enter Your VIN" maxlength="17" aria-label="Vehicle Identification Number">
+          <button onclick="window.location.href='product.html'" type="button">Get Report</button>
         </div>
       </div>
-      <div style="display:flex;justify-content:center">
-        <img src="https://images.unsplash.com/photo-1619767886558-efdc7b9af2c1?w=600&q=80" alt="Buick vehicle" style="width:100%;max-width:500px;border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);object-fit:cover;aspect-ratio:4/3">
+      <div class="hero-lookup-panel" id="tab-plate">
+        <div class="hero-search" style="margin:0 auto 28px">
+          <input type="text" placeholder="Enter U.S License Plate" aria-label="License Plate">
+          <button onclick="window.location.href='product.html'" type="button">Get Report</button>
+        </div>
+      </div>
+      <div class="hero-links" style="justify-content:center">
+        <a href="#decode-guide">How to find the VIN?</a>
+      </div>
+    </div>
+
+    <div class="hero-trust" style="margin:24px auto 0;justify-content:center">
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Free service — no payment required
+      </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Fast, accurate results
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="decode-results" style="display:none">
-  <div class="container">
-    <div class="section-header reveal visible">
-      <span class="section-label">Results</span>
-      <h2>Your Buick VIN Decoded</h2>
-      <p>Below is the complete breakdown of your 17-character VIN. Each segment reveals specific information about your Buick.</p>
-    </div>
-    <div style="background:var(--card);border-radius:var(--radius-xl);border:1px solid var(--border);overflow:hidden;margin-bottom:40px" class="reveal visible">
-      <div style="display:grid;grid-template-columns:repeat(17,1fr);gap:2px;background:var(--border);padding:0">
-        <script>
-          for(let i=0;i<17;i++){
-            const chars = ['5','G','A','E','V','B','K','W','X','S','J','1','2','3','4','5','6'];
-            document.write('<div style="text-align:center;padding:16px 4px;background:var(--card)"><span style="font-family:\'Space Grotesk\',monospace;font-size:1.125rem;font-weight:700;color:var(--primary)">'+chars[i]+'</span><br><span style="font-size:0.5rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em">'+(i+1)+'</span></div>');
-          }
-        </script>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border)">
-        <div style="text-align:center;padding:12px;background:var(--card)"><span style="font-family:var(--number);font-size:0.75rem;font-weight:600;color:var(--primary)">WMI</span><br><span style="font-size:0.625rem;color:var(--text-secondary)">World Manufacturer ID</span></div>
-        <div style="text-align:center;padding:12px;background:var(--card)"><span style="font-family:var(--number);font-size:0.75rem;font-weight:600;color:var(--primary)">VDS</span><br><span style="font-size:0.625rem;color:var(--text-secondary)">Vehicle Descriptor</span></div>
-        <div style="text-align:center;padding:12px;background:var(--card)"><span style="font-family:var(--number);font-size:0.75rem;font-weight:600;color:var(--primary)">VIS</span><br><span style="font-size:0.625rem;color:var(--text-secondary)">Vehicle Identifier</span></div>
-      </div>
-    </div>
-    <div class="specs-grid" style="margin-bottom:40px">
-      <div class="spec-card reveal visible"><div class="spec-label">WMI</div><div class="spec-value">5GA</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">USA / Buick / MPV</div></div>
-      <div class="spec-card reveal visible reveal-delay-1"><div class="spec-label">Model Year</div><div class="spec-value">2025</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Character S = 2025</div></div>
-      <div class="spec-card reveal visible reveal-delay-2"><div class="spec-label">Plant</div><div class="spec-value">Lansing, MI</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Character J = Lansing Delta Twp</div></div>
-      <div class="spec-card reveal visible"><div class="spec-label">Make</div><div class="spec-value">Buick</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">General Motors</div></div>
-      <div class="spec-card reveal visible reveal-delay-1"><div class="spec-label">Model</div><div class="spec-value">Enclave</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Enclave Avenir</div></div>
-      <div class="spec-card reveal visible reveal-delay-2"><div class="spec-label">Restraint System</div><div class="spec-value">Advanced</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Front, side, curtain airbags</div></div>
-      <div class="spec-card reveal visible"><div class="spec-label">Engine</div><div class="spec-value">3.6L V6</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">LGX / 310 hp</div></div>
-      <div class="spec-card reveal visible reveal-delay-1"><div class="spec-label">Check Digit</div><div class="spec-value">Verified</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Character 9: Valid</div></div>
-      <div class="spec-card reveal visible reveal-delay-2"><div class="spec-label">Serial Number</div><div class="spec-value">123456</div><div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px">Production sequence</div></div>
-    </div>
-    <div class="reveal visible" style="text-align:center">
-      <p style="font-size:0.9375rem;color:var(--text-secondary);margin-bottom:24px">Want the full factory window sticker with MSRP, options, and packages?</p>
-      <a href="product.html" class="btn btn-primary btn-lg">Get Complete Window Sticker</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt">
+<!-- HOW TO DECODE -->
+<section class="section" id="decode-guide">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">VIN Structure</span>
-      <h2>Understanding Your Buick's VIN</h2>
-      <p>Every character in your 17-digit VIN tells a story. Here's what each segment reveals about your Buick.</p>
+      <span class="section-label">How to Decode</span>
+      <h2>How to Decode a Buick VIN Number For Detailed Vehicle Information</h2>
+      <p>If you're buying a used Buick for sale and are curious about its history and condition, use our Buick VIN number lookup tool to uncover any hidden records. Follow these simple steps to get your Buick vehicle history reports within seconds:</p>
     </div>
-    <div class="timeline" style="max-width:600px;margin:0 auto">
-      <div class="timeline-item active">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>Positions 1-3: World Manufacturer Identifier (WMI)</h5>
-          <p>Country of origin, manufacturer, and vehicle type. Buick vehicles in the US start with 1G, 2G, 3G, 4G, or 5GA.</p>
-        </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-number">01</div>
+        <h4>Locate &amp; Enter Your VIN</h4>
+        <p>Our tool can decode standard VINs (17 characters) and classic Buick VINs (5-14 characters).</p>
       </div>
-      <div class="timeline-item active">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>Positions 4-8: Vehicle Descriptor Section (VDS)</h5>
-          <p>Model line, body style, engine type, restraint system, and transmission. This defines the core vehicle attributes.</p>
-        </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-number">02</div>
+        <h4>Search VIN</h4>
+        <p>To preview the vehicle specs and some records. Instantly see your Buick's specifications and open recalls.</p>
       </div>
-      <div class="timeline-item active">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>Position 9: Check Digit</h5>
-          <p>A mathematically calculated value that verifies the VIN is valid and has not been tampered with or altered.</p>
-        </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-number">03</div>
+        <h4>Complete the Payment</h4>
+        <p>Unlock the Full History and view a detailed report on accidents, titles, and value. Complete the secure checkout to access all records. You can download or print the report as a PDF.</p>
       </div>
-      <div class="timeline-item active">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>Position 10: Model Year</h5>
-          <p>Identifies the vehicle's model year. Letters and numbers rotate on a 30-year cycle (e.g., S=2025, T=2026, V=2027).</p>
-        </div>
-      </div>
-      <div class="timeline-item active">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>Position 11: Assembly Plant</h5>
-          <p>Identifies the specific GM assembly plant where your Buick was manufactured (e.g., J = Lansing Delta Township, MI).</p>
-        </div>
-      </div>
-      <div class="timeline-item active">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>Positions 12-17: Vehicle Identifier Section (VIS)</h5>
-          <p>The unique serial number of your vehicle. This is your Buick's individual production sequence within the model year.</p>
-        </div>
-      </div>
+    </div>
+    <div class="note-card reveal" style="margin-top:48px">
+      <p>While a free VIN decoder can provide you some basic details, it often doesn't tell the whole story. To get a complete picture of a Buick, including specs, features, options, MSRP, fuel economy, safety ratings, warranty, color, and more, we recommend using our <a href="product.html">Buick window sticker lookup by VIN</a>. You can also search using the car's US license plate or enter its year, make, and model.</p>
+    </div>
+    <div style="text-align:center;margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap" class="reveal">
+      <a href="product.html" class="btn btn-primary btn-lg red-cta">Get Buick Vehicle History Report</a>
+      <a href="product.html" class="btn btn-outline btn-lg rated-cta">View Sample Report</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- VIN LOCATION -->
+<section class="section section-alt" id="decode-vin-location">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">What You Can Decode</span>
-      <h2>Information Available from Your VIN</h2>
-      <p>Our VIN decoder extracts every detail that General Motors encodes in your vehicle's unique identifier.</p>
+      <span class="section-label">VIN Location</span>
+      <h2>Buick VIN Number Location: Find the VIN on Your Buick</h2>
     </div>
-    <div class="vin-info-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
-      <div class="vehicle-card reveal">
-        <div class="vehicle-icon">&#9733;</div>
-        <h5>Manufacturer</h5>
-        <p>Country of origin and brand</p>
+    <div class="vin-layout reveal">
+      <div class="vin-layout-text">
+        <p class="vin-layout-lead">So, where is the VIN on a Buick? The various Buick VIN number locations include the following:</p>
+        <ul class="vin-list">
+          <li>
+            <span class="vin-num">01</span>
+            <div>On the <strong>dashboard of the vehicle</strong>, near the windshield.</div>
+          </li>
+          <li>
+            <span class="vin-num">02</span>
+            <div>On the <strong>driver's side door jamb</strong>.</div>
+          </li>
+          <li>
+            <span class="vin-num">03</span>
+            <div>On the car's <strong>title, registration, maintenance book</strong>, or the <strong>auto insurance policy</strong>.</div>
+          </li>
+        </ul>
+        <p style="margin-top:24px">Now that you've found the VIN, it's time to retrieve all the information available from the VIN.</p>
       </div>
-      <div class="vehicle-card reveal reveal-delay-1">
-        <div class="vehicle-icon">&#9881;</div>
-        <h5>Engine</h5>
-        <p>Displacement, configuration, output</p>
+      <div class="vin-layout-image">
+        <img src="assets/images/buick-vin-location.jpg" alt="Buick VIN location" loading="lazy">
       </div>
-      <div class="vehicle-card reveal reveal-delay-2">
-        <div class="vehicle-icon">&#9881;</div>
-        <h5>Transmission</h5>
-        <p>Type and gear count</p>
-      </div>
-      <div class="vehicle-card reveal reveal-delay-3">
-        <div class="vehicle-icon">&#9632;</div>
-        <h5>Trim Level</h5>
-        <p>Base, Essence, Premium, Avenir</p>
-      </div>
-      <div class="vehicle-card reveal">
-        <div class="vehicle-icon">&#9670;</div>
-        <h5>Drive Type</h5>
-        <p>FWD or AWD configuration</p>
-      </div>
-      <div class="vehicle-card reveal reveal-delay-1">
-        <div class="vehicle-icon">&#9632;</div>
-        <h5>Model Year</h5>
-        <p>Exact model year of manufacture</p>
-      </div>
-      <div class="vehicle-card reveal reveal-delay-2">
-        <div class="vehicle-icon">&#9632;</div>
-        <h5>Production Plant</h5>
-        <p>Assembly facility location</p>
-      </div>
-      <div class="vehicle-card reveal reveal-delay-3">
-        <div class="vehicle-icon">&#9881;</div>
-        <h5>Factory Specs</h5>
-        <p>GVWR, brake system, body class</p>
-      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="#decode-guide" class="btn btn-primary btn-lg red-cta">Decode your Buick VIN now</a>
     </div>
   </div>
 </section>
 
-<section class="section section-alt">
+<!-- WHAT IS A VIN -->
+<section class="section section-alt" id="what-is-vin">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">Vehicle History</span>
-      <h2>Why VIN Decoding Matters</h2>
-      <p>Understanding your VIN is the first step to knowing your vehicle's complete history and verifying its authenticity.</p>
+      <span class="section-label">What is a VIN?</span>
+      <h2>What is a Buick VIN Number?</h2>
     </div>
-    <div class="vin-matters-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
-      <div class="glass-card-spec reveal vin-matters-card" style="padding:40px 36px">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-          <div style="width:44px;height:44px;background:var(--primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">&#10003;</div>
-          <h4 style="font-size:1.125rem">Verify Authenticity</h4>
-        </div>
-        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:20px">Confirm that your vehicle's VIN matches its documented specifications. Detect potential odometer rollback, title washing, or VIN cloning before making a purchase.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0;border-bottom:1px solid rgba(217,221,225,0.2)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Match VIN to vehicle trim level</li>
-          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0;border-bottom:1px solid rgba(217,221,225,0.2)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Verify engine and transmission match</li>
-          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Check for VIN tampering indicators</li>
+    <div class="learn-content reveal">
+      <p>Ever wondered about your Buick's hidden story? That 17-character Vehicle Identification Number (VIN) is your car's fingerprint, containing its complete factory blueprint. Our Buick VIN Decoder goes beyond a simple lookup, transforming that code into a clear, comprehensive report on specifications, factory options, safety history, and market value.</p>
+      <p>A Buick VIN (Vehicle Identification Number), is like a car's DNA — no two are the same. It's a unique code with 17 characters for modern vehicles, while older classic Buick models manufactured before 1981 may have between 5 and 14 digits.</p>
+      <p>This VIN number tells important details about the car, such as where it was made, its model year, engine type, transmission, trim level, unique features and more. Understanding and using the VIN can help you check for recalls, confirm specifications, look up the vehicle history, and ensure proper maintenance, making it valuable for both buyers and sellers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- READ / DECODE VIN -->
+<section class="section" id="decode-detail">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">VIN Breakdown</span>
+      <h2>How to Read &amp; Decode Buick VIN Number</h2>
+      <p>Note that the letters I, O, and Q are not included in a VIN to avoid confusion with the numbers 1 (One), 0 (Zero) and 9 (Nine).</p>
+    </div>
+    <div class="vin-img reveal">
+      <img src="assets/images/buick-vin-number-breakdown.jpg" alt="Buick VIN number breakdown" loading="lazy">
+    </div>
+
+    <div class="learn-content reveal">
+      <p>Now, let’s break down what all those characters in Buick’s VIN mean. A VIN is made up of 17 characters (except in classic vehicles), and each one gives you a clue about your Buick's specific details. These characters are also grouped into three sections to make decoding easier, they are:</p>
+    </div>
+
+    <div class="why-content reveal why-cards-3" style="margin-top:32px">
+      <div class="why-item">
+        <h4>World Manufacturer Identifier (WMI)</h4>
+        <p>This includes the first three characters (characters 1-3) and signifies the vehicle's country of origin and manufacturer.</p>
+      </div>
+      <div class="why-item">
+        <h4>Vehicle Descriptor Section (VDS)</h4>
+        <p>This section includes the 4th to 8th characters (characters 4-8) and contains information about the vehicle's make, engine specs, model, body style, restraint system and other important features.</p>
+      </div>
+      <div class="why-item">
+        <h4>Vehicle Identifier Section (VIS)</h4>
+        <p>Here, you will find the 9th to 17th characters (characters 9-17), which encode details like the model year, manufacturing plant code, and the last six digits being the serial number unique to each vehicle. These numbers only indicate the production number of the vehicle when it rolled out from the manufacturing plant.</p>
+      </div>
+    </div>
+
+    <div class="sample-vin reveal" style="margin-top:48px;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px">
+      <h4 style="font-size:1.125rem;margin-bottom:8px">Sample VIN: 2014 Buick LaCrosse</h4>
+      <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:24px">In this section, we will break down each character of a 2014 Buick LaCrosse VIN</p>
+      <div style="font-family:var(--number);font-size:2rem;font-weight:700;color:var(--accent-blue);letter-spacing:0.1em;background:var(--card);border:2px solid var(--border);border-radius:var(--radius-md);padding:16px 24px;display:inline-block;word-break:break-all">1G4GB5G30EF213018</div>
+      <p style="margin-top:20px;font-size:0.8125rem;color:var(--text-secondary)">For a comprehensive analysis of all Buick VIN formats, check the Buick decoding chart.</p>
+    </div>
+
+    <div class="vin-chars-table reveal" style="margin-top:40px;max-width:640px;margin-left:auto;margin-right:auto">
+      <table class="spec-table">
+        <thead>
+          <tr><th>Position</th><th>Number</th><th>Position</th><th>Number</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1st</td><td>1</td><td>10th</td><td>E</td></tr>
+          <tr><td>2nd</td><td>G</td><td>11th</td><td>F</td></tr>
+          <tr><td>3rd</td><td>4</td><td>12th</td><td>2</td></tr>
+          <tr><td>4th</td><td>G</td><td>13th</td><td>1</td></tr>
+          <tr><td>5th</td><td>B</td><td>14th</td><td>3</td></tr>
+          <tr><td>6th</td><td>5</td><td>15th</td><td>0</td></tr>
+          <tr><td>7th</td><td>G</td><td>16th</td><td>1</td></tr>
+          <tr><td>8th</td><td>3</td><td>17th</td><td>8</td></tr>
+          <tr><td>9th</td><td>0</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="decode-steps" style="margin-top:40px;display:flex;flex-direction:column;gap:32px;max-width:920px;margin-left:auto;margin-right:auto">
+      <div class="why-item reveal">
+        <h4>The first character (1) indicates the Buick country of origin</h4>
+        <p>This helps identify the country of production. From the characters below, the sample VIN starting with "1" means the car was manufactured in the United States. Other characters include:</p>
+        <ul class="decode-list">
+          <li>1, 4, 5: United States</li>
+          <li>2: Canada</li>
+          <li>3: Mexico</li>
+          <li>K: South Korea</li>
+          <li>W: Germany</li>
         </ul>
       </div>
-      <div class="glass-card-spec reveal reveal-delay-1 vin-matters-card" style="padding:40px 36px">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-          <div style="width:44px;height:44px;background:var(--primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">&#9881;</div>
-          <h4 style="font-size:1.125rem">Parts &amp; Service Accuracy</h4>
+      <div class="why-item reveal">
+        <h4>The second character (G) identifies the vehicle's manufacturer</h4>
+        <p>With the sample VIN, the second character, "G", denotes General Motors Company as the manufacturer.</p>
+      </div>
+      <div class="why-item reveal">
+        <h4>Character 3 shows the vehicle type or division</h4>
+        <p>The sample VIN with "4" as the third character means we are dealing with a Buick. The first three characters can be any of the following:</p>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>VIN Prefix</th><th>Buick Location</th></tr></thead>
+            <tbody>
+              <tr><td>1G4 and 5GA</td><td>Buick in America</td></tr>
+              <tr><td>2G4</td><td>Buick in Canada</td></tr>
+              <tr><td>3G4</td><td>Buick in Mexico</td></tr>
+              <tr><td>KL4</td><td>Buick in Korea</td></tr>
+              <tr><td>LSG</td><td>Buick in China</td></tr>
+              <tr><td>W04</td><td>Adam Opel in Germany or Poland</td></tr>
+            </tbody>
+          </table>
         </div>
-        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.7;margin-bottom:20px">Get the right parts, service procedures, and specifications for your exact Buick configuration. Avoid costly mistakes from incorrect assumptions.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0;border-bottom:1px solid rgba(217,221,225,0.2)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Correct engine parts and fluids</li>
-          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0;border-bottom:1px solid rgba(217,221,225,0.2)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Transmission service specifications</li>
-          <li style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary);padding:8px 0"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>Exact brake and suspension components</li>
+      </div>
+      <div class="why-item reveal">
+        <h4>Character 4 represents the model and trim</h4>
+        <p>Some of the characters for some models include:</p>
+        <div class="decode-grid-3">
+          <div>
+            <strong>LaCrosse</strong>
+            <ul class="decode-list small"><li>G1 Early models</li><li>G4, GF Touring</li><li>GA Base</li><li>GB Leather</li><li>GC Leather AWD</li><li>GD Premium</li><li>GE Premium AWD</li></ul>
+          </div>
+          <div>
+            <strong>Regal</strong>
+            <ul class="decode-list small"><li>G2 Early models</li><li>G3 Sport Touring</li><li>GK Leather</li><li>GL Leather AWD</li><li>GM Fleet</li><li>GN Premium eAssist</li><li>GP Premium I / Premium I AWD</li><li>GS Premium II</li><li>GT Premium II AWD</li><li>GU, WS GS</li><li>GV GS AWD</li></ul>
+          </div>
+          <div>
+            <strong>Verano</strong>
+            <ul class="decode-list small"><li>PP Early models</li><li>PR Convenience</li><li>PS Leather</li><li>PT Premium Turbo</li><li>PV 1SV</li><li>PW Sport Touring</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="why-item reveal">
+        <h4>Character 5 represents the body style</h4>
+        <p>Some of the characters include:</p>
+        <ul class="decode-list">
+          <li>1 or 2 — Two door</li>
+          <li>3 — Convertible</li>
+          <li>5 — Sedan</li>
+          <li>6 — Sedan or four door hatchback</li>
+          <li>8 — 5 door wagon or hatchback</li>
+          <li>9 — Touring</li>
         </ul>
       </div>
+      <div class="why-item reveal">
+        <h4>Character 6 represents the restraint system</h4>
+        <p>Some of the characters include:</p>
+        <ul class="decode-list">
+          <li>1 — Seat belts only</li>
+          <li>2 — Dual front airbags</li>
+          <li>3 — Driver's side airbag</li>
+          <li>4 — Front and side airbags</li>
+          <li>5 — Front airbags and side airbag on driver's side</li>
+          <li>6 — Front and side airbags with occupancy sensor</li>
+          <li>7 — Front airbags and side airbags for front and rear passengers</li>
+        </ul>
+      </div>
+      <div class="why-item reveal">
+        <h4>Character 7 represents the engine type</h4>
+        <p>From the sample VIN with "3" as the eighth character, the Buick car's engine is a 3.6L LFX V6 Engine Gasoline 304HP. Some other characters include:</p>
+        <ul class="decode-list">
+          <li>1 — 3.8 liter V6</li>
+          <li>3 — 3.6 liter V6</li>
+          <li>4, 6 — 2.2 liter four cylinder</li>
+          <li>A, D — 2.3 liter four cylinder</li>
+          <li>E — 3.4 liter V6 or 5.0 liter V8</li>
+          <li>G, P — 5.7 liter V8</li>
+          <li>H — 5.0 liter V8</li>
+          <li>J — 3.1 liter V6</li>
+          <li>K — 3.8 liter V6 or 2.4 liter four cylinder</li>
+          <li>R — 2.4 liter four cylinder or 3.0 liter V6</li>
+          <li>T — 2.4 liter four cylinder</li>
+          <li>V, X — 2.0 liter turbo four cylinder</li>
+          <li>W — 4.3 liter V6</li>
+        </ul>
+      </div>
+      <div class="why-item reveal">
+        <h4>The check digit (0) verifies that the VIN is authentic</h4>
+        <p>It is calculated using a specific algorithm developed by the U.S. Department of Transportation. Sorry, it's a mystery - we have no idea how this works.</p>
+      </div>
+      <div class="why-item reveal">
+        <h4>The tenth character (E) indicates the model year</h4>
+        <p>The tenth character indicates the model year and alternates between numbers and letters. Each letter represents a specific year; "E", from the VIN example, signifies the Buick car is a 2014 model. Here's a table that can help you quickly identify any car's model year:</p>
+        <div class="table-wrap" style="max-width:760px">
+          <div class="decode-year-grid">
+            <div class="year-cell"><b>A</b><span>1980</span></div>
+            <div class="year-cell"><b>B</b><span>1981</span></div>
+            <div class="year-cell"><b>C</b><span>1982</span></div>
+            <div class="year-cell"><b>D</b><span>1983</span></div>
+            <div class="year-cell"><b>E</b><span>1984</span></div>
+            <div class="year-cell"><b>F</b><span>1985</span></div>
+            <div class="year-cell"><b>G</b><span>1986</span></div>
+            <div class="year-cell"><b>H</b><span>1987</span></div>
+            <div class="year-cell"><b>J</b><span>1988</span></div>
+            <div class="year-cell"><b>K</b><span>1989</span></div>
+            <div class="year-cell"><b>L</b><span>1990</span></div>
+            <div class="year-cell"><b>M</b><span>1991</span></div>
+            <div class="year-cell"><b>N</b><span>1992</span></div>
+            <div class="year-cell"><b>P</b><span>1993</span></div>
+            <div class="year-cell"><b>R</b><span>1994</span></div>
+            <div class="year-cell"><b>S</b><span>1995</span></div>
+            <div class="year-cell"><b>T</b><span>1996</span></div>
+            <div class="year-cell"><b>V</b><span>1997</span></div>
+            <div class="year-cell"><b>W</b><span>1998</span></div>
+            <div class="year-cell"><b>X</b><span>1999</span></div>
+            <div class="year-cell"><b>Y</b><span>2000</span></div>
+            <div class="year-cell"><b>1</b><span>2001</span></div>
+            <div class="year-cell"><b>2</b><span>2002</span></div>
+            <div class="year-cell"><b>3</b><span>2003</span></div>
+            <div class="year-cell"><b>4</b><span>2004</span></div>
+            <div class="year-cell"><b>5</b><span>2005</span></div>
+            <div class="year-cell"><b>6</b><span>2006</span></div>
+            <div class="year-cell"><b>7</b><span>2007</span></div>
+            <div class="year-cell"><b>8</b><span>2008</span></div>
+            <div class="year-cell"><b>9</b><span>2009</span></div>
+            <div class="year-cell"><b>A</b><span>2010</span></div>
+            <div class="year-cell"><b>B</b><span>2011</span></div>
+            <div class="year-cell"><b>C</b><span>2012</span></div>
+            <div class="year-cell"><b>D</b><span>2013</span></div>
+            <div class="year-cell"><b>E</b><span>2014</span></div>
+            <div class="year-cell"><b>F</b><span>2015</span></div>
+            <div class="year-cell"><b>G</b><span>2016</span></div>
+            <div class="year-cell"><b>H</b><span>2017</span></div>
+            <div class="year-cell"><b>J</b><span>2018</span></div>
+            <div class="year-cell"><b>K</b><span>2019</span></div>
+            <div class="year-cell"><b>L</b><span>2020</span></div>
+            <div class="year-cell"><b>M</b><span>2021</span></div>
+            <div class="year-cell"><b>N</b><span>2022</span></div>
+            <div class="year-cell"><b>P</b><span>2023</span></div>
+            <div class="year-cell"><b>R</b><span>2024</span></div>
+            <div class="year-cell"><b>S</b><span>2025</span></div>
+            <div class="year-cell"><b>T</b><span>2026</span></div>
+            <div class="year-cell"><b>V</b><span>2027</span></div>
+            <div class="year-cell"><b>W</b><span>2028</span></div>
+            <div class="year-cell"><b>X</b><span>2029</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-item reveal">
+        <h4>The eleventh character (F) shows the manufacturing plant</h4>
+        <p>The sample VIN has "F" as the 11th character, indicating Fairfax Assembly, Kansas City, Kansas, United States (USA). Other characters include:</p>
+        <ul class="decode-list">
+          <li>0 — Landing, MI</li>
+          <li>1, 9 — Oshawa, Ontario, Canada</li>
+          <li>4 — Orion, MI</li>
+          <li>5 — Bowling Green, KY</li>
+          <li>7 — Lordstown, OH</li>
+          <li>A — Arlington, TX</li>
+          <li>C — Changwon, Korea</li>
+          <li>F — Fairfax, KS</li>
+          <li>G — Gilwice, Poland</li>
+          <li>L — San Luis Potosi, Mexico</li>
+          <li>S — Ramoz Arizpe, Mexico</li>
+          <li>U — Detroit, MI</li>
+        </ul>
+      </div>
+      <div class="why-item reveal">
+        <h4>The final characters make up the unique sequential number</h4>
+        <p>These characters, 213018, make up the unique sequential number (serial number) of the Buick. This number is nothing more than the production number when the car rolled out from the assembly line.</p>
+      </div>
+    </div>
+
+    <div class="note-card reveal" style="margin-top:48px">
+      <p>You can spend the whole time trying to decode a VIN manually and this is usually prone to errors. To get accurate information as quickly as possible, we recommend you use our reliable Buick VIN decoder.</p>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="#decode-guide" class="btn btn-primary btn-lg red-cta">Get a Buick VIN Number Search</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- WHAT INFO -->
+<section class="section section-alt" id="info-from-vin">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">Why Choose Us</span>
-      <h2>Why Buick Owners Trust Us</h2>
-      <p>We are the premier destination for Buick VIN decoding and window sticker services. Here's why thousands of owners choose us.</p>
+      <span class="section-label">VIN Information</span>
+      <h2>What Information Can I Get from Decoding a Buick VIN Number?</h2>
+      <p>A Buick VIN decoder can help you access everything about a new or used Buick, including vehicle specifications, features, build sheets, and history records. Our tool provides different layers of information, from a free basic decode to a full vehicle history report.</p>
     </div>
-    <div class="vehicle-grid" style="grid-template-columns:repeat(3,1fr)">
-      <div class="vehicle-card reveal">
-        <div class="vehicle-icon">&#9733;</div>
-        <h5>GM Factory Data</h5>
-        <p>Direct integration with General Motors' official build database for maximum accuracy.</p>
+
+    <div class="why-content reveal" style="display:flex;flex-direction:column;gap:24px">
+      <div class="why-item">
+        <h4>Free Buick VIN Decode (Instant Results)</h4>
+        <p>Enter your VIN for an immediate, no-cost report revealing the factory build sheet:</p>
+        <ul class="decode-list">
+          <li>Year, Make, Model &amp; Exact Trim — e.g., 2023 Enclave Avenir</li>
+          <li>Engine Specifications — Size, configuration, horsepower</li>
+          <li>Manufacturing Details — Assembly plant and country of origin</li>
+          <li>Body Style &amp; Standard Features</li>
+          <li>Check for Open Safety Recalls from the NHTSA database</li>
+        </ul>
       </div>
-      <div class="vehicle-card reveal reveal-delay-1">
-        <div class="vehicle-icon">&#8615;</div>
-        <h5>Instant Results</h5>
-        <p>Free VIN decoding in seconds. No sign-up, no credit card required.</p>
-      </div>
-      <div class="vehicle-card reveal reveal-delay-2">
-        <div class="vehicle-icon">&#128274;</div>
-        <h5>Secure &amp; Private</h5>
-        <p>Your VIN and personal data are encrypted and never shared with third parties.</p>
-      </div>
-      <div class="vehicle-card reveal">
-        <div class="vehicle-icon">&#9670;</div>
-        <h5>Buick Specialists</h5>
-        <p>Focused exclusively on Buick — no generic multi-brand databases.</p>
-      </div>
-      <div class="vehicle-card reveal reveal-delay-1">
-        <div class="vehicle-icon">&#9632;</div>
-        <h5>Unmatched Detail</h5>
-        <p>More data points than any free decoder. Options, packages, and pricing included.</p>
-      </div>
-      <div class="vehicle-card reveal reveal-delay-2">
-        <div class="vehicle-icon">&#9881;</div>
-        <h5>Customer Support</h5>
-        <p>Dedicated US-based support team ready to help with any question.</p>
+      <div class="why-item">
+        <h4>Premium Buick VIN Lookup &amp; History Report</h4>
+        <p>Upgrade to uncover the complete story and protect your investment. Here are some Buick specifications you can access when you use a Buick VIN decoder:</p>
+        <div class="decode-chips">
+          <span class="model-card">Year</span>
+          <span class="model-card">Make</span>
+          <span class="model-card">Model</span>
+          <span class="model-card">Trim</span>
+          <span class="model-card">Body type</span>
+          <span class="model-card">Country</span>
+          <span class="model-card">Engine Description</span>
+          <span class="model-card">Engine Size and specs</span>
+          <span class="model-card">Engine model</span>
+          <span class="model-card">Engine configuration</span>
+          <span class="model-card">Drive Type</span>
+          <span class="model-card">Transmission style</span>
+          <span class="model-card">Fuel type</span>
+          <span class="model-card">Displacement</span>
+          <span class="model-card">Mileage</span>
+          <span class="model-card">Exterior dimensions</span>
+          <span class="model-card">Interior dimensions</span>
+          <span class="model-card">Cargo dimensions</span>
+          <span class="model-card">Number of doors</span>
+          <span class="model-card">Standard seating</span>
+          <span class="model-card">Seating</span>
+          <span class="model-card">Ground clearance</span>
+          <span class="model-card">Suspension</span>
+          <span class="model-card">Steering</span>
+          <span class="model-card">Braking</span>
+          <span class="model-card">Wheels</span>
+          <span class="model-card">Tire pressure and size</span>
+          <span class="model-card">Tank capacity</span>
+          <span class="model-card">Tailering</span>
+          <span class="model-card">Trailering</span>
+          <span class="model-card">Weight</span>
+          <span class="model-card">MSRP</span>
+          <span class="model-card">Delivery charges</span>
+          <span class="model-card">EPA Class</span>
+          <span class="model-card">Seat belt type</span>
+          <span class="model-card">Front airbag information</span>
+          <span class="model-card">Emissions</span>
+          <span class="model-card">Valve train design</span>
+          <span class="model-card">Traction battery</span>
+          <span class="model-card">Range extender</span>
+          <span class="model-card">Electrical powertrain</span>
+          <span class="model-card">Electrical specifications</span>
+          <span class="model-card">Off-road attributes</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-alt">
+<!-- USED BUICK -->
+<section class="section" id="used-buick">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Used Buick Buying</span>
+      <h2>Buying a Used Buick? Look Beyond a Buick VIN Decoder</h2>
+      <p>The VIN number is key to verifying important details like where the vehicle was made and its specific features. But there's more to it than that. If you plan to buy a used Buick for sale, you should utilize our reliable Buick VIN lookup tool to uncover past records, such as accident reports, previous ownership, and maintenance history. This helps you make a smart and confident buying decision.</p>
+    </div>
+    <div class="vin-matters-grid">
+      <div class="vehicle-card reveal"><h5>Mileage</h5></div>
+      <div class="vehicle-card reveal reveal-delay-1"><h5>Odometer Readings</h5></div>
+      <div class="vehicle-card reveal reveal-delay-2"><h5>Sales History</h5></div>
+      <div class="vehicle-card reveal"><h5>Auction History</h5></div>
+      <div class="vehicle-card reveal reveal-delay-1"><h5>Accident History</h5></div>
+      <div class="vehicle-card reveal reveal-delay-2"><h5>Title Brand</h5></div>
+      <div class="vehicle-card reveal"><h5>Salvage Title</h5></div>
+      <div class="vehicle-card reveal reveal-delay-1"><h5>Hail Damage</h5></div>
+      <div class="vehicle-card reveal reveal-delay-2"><h5>Flood Damage</h5></div>
+      <div class="vehicle-card reveal"><h5>Structural Damage</h5></div>
+      <div class="vehicle-card reveal reveal-delay-1"><h5>Ownership History</h5></div>
+      <div class="vehicle-card reveal reveal-delay-2"><h5>Usage History</h5></div>
+      <div class="vehicle-card reveal"><h5>Ownership Duration</h5></div>
+      <div class="vehicle-card reveal reveal-delay-1"><h5>Lien &amp; Loans</h5></div>
+      <div class="vehicle-card reveal reveal-delay-2"><h5>Maintenance Schedule</h5></div>
+      <div class="vehicle-card reveal"><h5>Warranty Status</h5></div>
+      <div class="vehicle-card reveal reveal-delay-1"><h5>Repair Cost</h5></div>
+      <div class="vehicle-card reveal reveal-delay-2"><h5>Recalls History</h5></div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="#decode-guide" class="btn btn-primary btn-lg red-cta">Check Buick VIN now</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VIN CHECK -->
+<section class="section section-alt" id="vin-check-essential">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Why a VIN Check</span>
+      <h2>Why a VIN Check is Essential When Buying a Used Buick</h2>
+      <p>The Buick VIN number codes can serve different purposes depending on what you're searching for — basic specs, detailed specs and features, or the vehicle history.</p>
+    </div>
+    <div class="need-grid reveal why-cards-3">
+      <div class="why-item reveal">
+        <h4>Vehicle Verification</h4>
+        <p>Decoding the VIN provides essential details like the vehicle's year, make, model, and engine type. This helps confirm that the car matches its original factory specifications and the seller's description.</p>
+      </div>
+      <div class="why-item reveal">
+        <h4>Vehicle Registration</h4>
+        <p>To register a vehicle legally, you must provide its unique VIN. This identifier is essential for completing registration paperwork, including ownership documents, titles, and bills of sale.</p>
+      </div>
+      <div class="why-item reveal">
+        <h4>Insurance Purposes</h4>
+        <p>Insurance companies use the VIN to gather accurate vehicle details for coverage and registration purposes.</p>
+      </div>
+      <div class="why-item reveal">
+        <h4>Vehicle History Checks</h4>
+        <p>One of the most important uses of a VIN is checking a vehicle's history. By decoding a Buick VIN, you can access its ownership history, theft reports, accident records, lien status, salvage titles, warranty details, and more. This information helps you avoid scams, such as buying stolen cars or vehicles with rolled-back odometers.</p>
+      </div>
+      <div class="why-item reveal">
+        <h4>Safety Recalls</h4>
+        <p>Manufacturers track VINs to identify vehicles involved in recalls, notifying owners about necessary repairs. Potential buyers can also use a VIN to check for any outstanding recalls on used cars before purchase.</p>
+      </div>
+      <div class="why-item reveal">
+        <h4>Police Checks</h4>
+        <p>Law enforcement agencies use VINs to track stolen vehicles. They can flag VINs in their system to receive alerts at checkpoints, helping recover stolen cars.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR MODELS -->
+<section class="section" id="popular-models">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Popular Models</span>
+      <h2>Popular Buick Models to Explore with our Buick VIN Decoder</h2>
+      <p>You can easily decode any Buick VIN format — standard 17-digit or classic car VINs (5-14 digits long) using our Buick VIN number decoder. Here are some Buick models you may be interested in:</p>
+    </div>
+    <div class="models-grid reveal">
+      <a href="#" class="model-card">Regal</a>
+      <a href="#" class="model-card">Riviera</a>
+      <a href="#" class="model-card">Terraza</a>
+      <a href="#" class="model-card">Encore</a>
+      <a href="#" class="model-card">LaCrosse</a>
+      <a href="#" class="model-card">Lucerne</a>
+      <a href="#" class="model-card">LeSabre</a>
+      <a href="#" class="model-card">Skylark</a>
+      <a href="#" class="model-card">Enclave</a>
+      <a href="#" class="model-card">Century</a>
+      <a href="#" class="model-card">Wildcat</a>
+      <a href="#" class="model-card">Envision</a>
+      <a href="#" class="model-card">Park Avenue</a>
+      <a href="#" class="model-card">Verano</a>
+      <a href="#" class="model-card">Special</a>
+      <a href="#" class="model-card">Roadmaster</a>
+      <a href="#" class="model-card">Cascada</a>
+      <a href="#" class="model-card">Reatta</a>
+      <a href="#" class="model-card">Electra</a>
+      <a href="#" class="model-card">Rainier</a>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER TOOLS -->
+<section style="padding:48px 0;background:var(--accent-red);color:#FFFFFF" id="other-tools">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:32px">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:#FFFFFF">Other Available Buick VIN Tools</h2>
+    </div>
+    <div class="vin-tools-grid">
+      <a href="#"><span>Buick Paint Code by VIN</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:8px;transition:transform .3s"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      <a href="#"><span>Buick Options by VIN</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:8px;transition:transform .3s"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      <a href="#"><span>Buick Warranty Check by VIN</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:8px;transition:transform .3s"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      <a href="#"><span>Buick Build Sheet by VIN</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:8px;transition:transform .3s"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq-decoder">
   <div class="container">
     <div class="section-header reveal">
       <span class="section-label">FAQ</span>
-      <h2>VIN Decoder FAQ</h2>
+      <h2>Frequently Asked Questions</h2>
     </div>
     <div class="faq-grid">
       <div class="faq-item active">
-        <button class="faq-question">What is a VIN?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>A Vehicle Identification Number (VIN) is a unique 17-character code assigned to every motor vehicle. It serves as your vehicle's fingerprint, containing information about the manufacturer, model year, engine, and more.</p></div>
+        <button class="faq-question">How to get a Buick window sticker from VIN number? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Simply use our Buick window sticker lookup tool to find vital information including detailed features, fuel economy, original paint colors, MSRP, factory installed options and packages, warranty info, and more.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">Is the VIN decoder really free?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Yes. Our basic VIN decoder is completely free with no hidden charges. You can decode your Buick's VIN and get comprehensive vehicle information without any payment. Upgrading to a full window sticker is optional.</p></div>
+        <button class="faq-question">How do you decode a Buick VIN number? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Use our easy Buick VIN decoder to access a lot of information including the year, make, model, engine, transmission, MSRP etc. If you're buying used Buick, you can use our Buick VIN number check tool to uncover the history and condition.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">What information can I get from a VIN?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>A VIN decode reveals the manufacturer, country of origin, model year, engine type, transmission, trim level, drive type, assembly plant, and the vehicle's unique serial number. For detailed pricing and options, you need a full window sticker.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What is the difference between VIN decoding and a window sticker?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>VIN decoding reveals the vehicle's built-in identity codes. A window sticker (Monroney label) shows the original MSRP, every factory-installed option and package, EPA ratings, and the final retail price. The window sticker provides the complete financial picture.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can I decode a non-Buick VIN here?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Our service is optimized specifically for Buick vehicles. While we may provide basic information for other GM brands, for the most accurate and complete results, we recommend Buick VINs only.</p></div>
+        <button class="faq-question">Where is the VIN number on a Buick Encore? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>You can find your Buick VIN number on the vehicle registration or located on the driver's side dashboard and the plate on the driver's side door frame.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <h2>Ready for the Full Picture?</h2>
-      <p>Your free VIN decode is just the beginning. Get your complete factory window sticker with MSRP, options, and packages.</p>
-      <a href="product.html" class="btn btn-primary btn-lg" style="background:#fff;color:var(--primary)">Get Your Window Sticker</a>
-    </div>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="nav-logo" style="color:#fff">
+        <a href="index.html" class="nav-logo" style="color:#fff">
           <span class="nav-logo-icon" style="background:#fff;color:var(--primary)">B</span>
           BuickWindowSticker
         </a>
@@ -392,41 +690,32 @@
         </div>
       </div>
       <div>
+        <h5>About Us</h5>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Request a Refund</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Tools</h5>
+        <ul class="footer-links">
+          <li><a href="vin-decoder.html">Buick VIN Decoder</a></li>
+          <li><a href="#">Buick Build Sheet by VIN</a></li>
+          <li><a href="#">Buick Options by VIN</a></li>
+          <li><a href="#">Buick Warranty Check by VIN</a></li>
+          <li><a href="#">Buick Specs by VIN</a></li>
+          <li><a href="#">Buick Paint Code by VIN</a></li>
+        </ul>
+      </div>
+      <div>
         <h5>Services</h5>
         <ul class="footer-links">
           <li><a href="product.html">Window Sticker</a></li>
           <li><a href="vin-decoder.html">VIN Decoder</a></li>
           <li><a href="#">Build Sheet</a></li>
-          <li><a href="#">VIN Lookup</a></li>
-          <li><a href="#">Factory Options</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Resources</h5>
-        <ul class="footer-links">
-          <li><a href="#">How It Works</a></li>
-          <li><a href="#">Sample Sticker</a></li>
-          <li><a href="#">Find Your VIN</a></li>
-          <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Support</h5>
-        <ul class="footer-links">
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Order Status</a></li>
-          <li><a href="#">Refund Policy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Company</h5>
-        <ul class="footer-links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Accessibility</a></li>
+          <li><a href="#">Recall Check</a></li>
         </ul>
       </div>
     </div>
@@ -445,20 +734,6 @@
   </div>
 </footer>
 
-<script>
-function decodeVIN(){
-  const btn=document.getElementById('decodeBtn');
-  const results=document.getElementById('decode-results');
-  btn.textContent='Decoding...';
-  btn.disabled=true;
-  setTimeout(()=>{
-    results.style.display='block';
-    results.scrollIntoView({behavior:'smooth',block:'start'});
-    btn.textContent='Decoded';
-    btn.style.background='var(--success)';
-  },800);
-}
-</script>
 <script src="js/main.js"></script>
 </body>
 </html>
